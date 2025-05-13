@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Throne</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      background: url(imagenes/Fondo2.0.jpeg) no-repeat center center fixed;
+      background-size: cover;
+      color: #fde7b8;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .trono {
+        font-size: 30px;
+    }
+    .logo {
+        right: 350px;
+        width: 300px;
+    }
+    .icono {
+        right: 300px;
+        width: 350px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      align-items: center;
+    }
+    .logo img {
+      height: 80px;
+    }
+    .register-btn {
+      background: none;
+      border: 2px solid #ff073a;
+      color: #ff073a;
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .register-btn:hover {
+      background: #ff073a;
+      color: black;
+    }
+    button {
+      background: none;
+      border: 2px solid #ff073a;
+      color: #ff073a;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #ff073a;
+      color: black;
+    }
+    .socials i {
+      margin: 0 10px;
+      font-size: 30px;
+      color: #ff073a;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+    .game-imgs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .game-imgs img {
+      width: 150px;
+      height: auto;
+      cursor: pointer;
+      border: 2px solid #ff073a;
+      transition: all 0.3s ease;
+    }
+    .clip-gif {
+        width: 300px;
+        right: 250x;
+        height: auto;
+        border: 2px solid #ff073a;
+        cursor: pointer;
+        transition: all 0.3 ease;
+    }
+    .list-container {
+      text-align: left;
+      max-width: 600px;
+      margin: 20px auto;
+      color: #ff073a;
+    }
+    .list-item {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ff073a;
+      background-color: rgba(0,0,0,0.7);
+    }
+    .contact-btn {
+      color: #25D366;
+      margin-left: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .redes {
+      font-size: 25px;
+    }
+    #registerForm {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #111;
+      padding: 20px;
+      border: 2px solid #ff073a;
+      display: none;
+      z-index: 999;
+      width: 300px;
+    }
+    #registerForm input {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+    }
+    #registerForm button {
+      background: #ff073a;
+      color: black;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    a { color: #ff073a; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="logo">
+      <img class="logo" src="imagenes/1d5fd592-58d0-4d80-9e45-5e502a11fe9a-removebg-preview.png" alt="Throne Logo">
+    </div>
+    <button class="register-btn" onclick="toggleRegister()">Regístrate aquí</button>
+  </div>
+
+  <p class="trono">¿ Seras digno de sentarte en el trono ?</p>
+  <img class="icono" src="imagenes/Icono.jpeg" alt="imagenes">
+
+
+  <div>
+    <button onclick="toggleSection('campeonatos')">Campeonatos</button>
+    <button onclick="toggleSection('torneos')">Torneos</button>
+    <button onclick="toggleSection('clips')">Clips</button>
+  </div>
+
+  <div id="campeonatos" class="hidden">
+    <div class="game-imgs">
+      <img src="https://i.pinimg.com/236x/bb/a2/1b/bba21bac581fbc122942d91febfa61cc.jpg" onclick="showGameList('freefire')">
+      <img src="https://www.citypng.com/public/uploads/preview/hd-call-of-duty-mobile-cod-m-game-official-logo-png-701751694787732iljpb4piny.png" onclick="showGameList('cod')">
+    </div>
+    <div id="freefire" class="list-container hidden">
+      <div class="list-item">
+        Campeonato freefire - Escuadras, eliminación directa.
+        <a class="contact-btn" href="https://wa.me/+573504708100" target="_blank">Contacto</a>
+      </div>
+    </div>
+    <div id="cod" class="list-container hidden">
+      <div class="list-item">
+        Campeonato cod - 1v1, eliminación simple.
+        <a class="contact-btn" href="https://wa.me/+573227340710" target="_blank">Contacto</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="torneos" class="hidden">
+    <div class="game-imgs">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Valorant_logo_-_pink_color_version.svg" onclick="showGameList('valorantT')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2v49rbnO_jqIS3ACzQDBJhGNvSDQtmL-4ig&s" onclick="showGameList('lolT')">
+    </div>
+    <div id="valorantT" class="list-container hidden">
+      <div class="list-item">
+        Torneo Valorant - Clasificatorias en línea, final presencial.
+        <a class="contact-btn" href="https://wa.me/+573115178961" target="_blank">Contacto</a>
+      </div>
+    </div>
+    <div id="lolT" class="list-container hidden">
+      <div class="list-item">
+        Torneo League of Legends - Equipos de 5, doble eliminación.
+        <a class="contact-btn" href="https://wa.me/+573115178961" target="_blank">Contacto</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="clips" class="hidden">
+    <div class="game-imgs">
+      <img class="clip-gif" src="imagenes/ClipJavi1.gif" alt="Clip 1">
+      <img class="clip-gif" src="imagenes/ClipObito2.gif" alt="Clip 2">
+      <img class="clip-gif" src="imagenes/ClipJuanito.gif" alt="Clip 3">
+    </div>
+  </div>
+
+  <div class="socials">
+    <p class="redes">Siguenos en nuetras redes sociales</p>
+    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://x.com/THRONO_GAMING" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/throno.gaming/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@throno_gaming" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://wa.me/+573227340710" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <div id="registerForm">
+    <div id="registerSection">
+      <h3>Registro</h3>
+      <input type="text" placeholder="Nombre de usuario">
+      <input type="email" placeholder="Correo electrónico">
+      <input type="password" placeholder="Contraseña">
+      <button onclick="alert('Usuario registrado (demo)')">Crear cuenta</button>
+      <p><a href="#" onclick="switchForm('login')">¿Ya tienes cuenta? Inicia sesión</a></p>
+    </div>
+    <div id="loginSection" class="hidden">
+      <h3>Iniciar sesión</h3>
+      <input type="email" placeholder="Correo electrónico">
+      <input type="password" placeholder="Contraseña">
+      <button onclick="alert('Sesión iniciada (demo)')">Entrar</button>
+      <p><a href="#" onclick="switchForm('register')">¿No tienes cuenta? Regístrate</a></p>
+    </div>
+  </div>
+
+  <script>
+    function toggleRegister() {
+      const form = document.getElementById('registerForm');
+      form.style.display = form.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function switchForm(mode) {
+      if (mode === 'login') {
+        document.getElementById('registerSection').classList.add('hidden');
+        document.getElementById('loginSection').classList.remove('hidden');
+      } else {
+        document.getElementById('registerSection').classList.remove('hidden');
+        document.getElementById('loginSection').classList.add('hidden');
+      }
+    }
+
+    function toggleSection(id) {
+      const sections = ['campeonatos', 'torneos', 'clips'];
+      sections.forEach(sec => {
+        if (sec !== id) {
+          document.getElementById(sec).classList.add('hidden');
+        }
+      });
+      document.getElementById(id).classList.toggle('hidden');
+    }
+
+    function showGameList(listId) {
+      const allLists = document.querySelectorAll('.list-container');
+      allLists.forEach(list => list.classList.add('hidden'));
+
+      const currentList = document.getElementById(listId);
+      if (currentList) currentList.classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
